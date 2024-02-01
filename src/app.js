@@ -1,13 +1,16 @@
 const express = require('express');
-
+const userController = require('./controllers/user.controller');
 // ...
 
 const app = express();
 
 // não remova ou mova esse endpoint
+app.post('/login', userController.login);
+
 app.get('/', (_request, response) => {
   response.send();
 });
+
 
 app.use(express.json());
 
